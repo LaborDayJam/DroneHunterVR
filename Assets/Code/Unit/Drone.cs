@@ -20,7 +20,10 @@ public class Drone : Unit {
 			}
 			//Update to the next Waypoint
 			nextWayPoint = nextWayPoint.nextWaypoint;
-			nextWaypointPosition = nextWayPoint.transform.position;
+			if(nextWayPoint)
+				nextWaypointPosition = nextWayPoint.transform.position;
+			else
+				break;
 			yield return 0;
 		}
 	}
