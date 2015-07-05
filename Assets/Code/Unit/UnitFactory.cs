@@ -40,4 +40,13 @@ public class UnitFactory : MonoBehaviour {
 		enemy.name = "Avenger";
 		return enemy.GetComponent<Drone>();
 	}
+
+	
+	public Drone ConstructBomber()
+	{
+		GameObject enemy = (GameObject)GameObject.Instantiate(prefabBomber);
+		enemy.name = "Bomber";
+		enemy.transform.parent = transform;
+		return enemy.GetComponent<Drone>();
+	}
 }

@@ -4,11 +4,14 @@ using System.Collections;
 public class Bomber : Drone {
 
 	public float attackRange = 20;
-	// Use this for initialization
+	public GameObject prefabMissile;
+
 	void Start () {
 		StartCoroutine ("CR_AttackRoutine");
+		distanceThreshold = 2;
 	}
 
+	//Attack once
 	IEnumerator CR_AttackRoutine()
 	{
 		while (true) {
@@ -23,6 +26,8 @@ public class Bomber : Drone {
 	void Attack()
 	{
 		//Launch missile
+		GameObject missile = (GameObject)Instantiate (prefabMissile, transform.position - transform.up, transform.rotation);
+		missile.GetComponent<Missile> ().SetTarget (player.transform);
 	}
 
 	protected override void onDeath ()
@@ -30,5 +35,4 @@ public class Bomber : Drone {
 		base.onDeath ();
 		StopCoroutine ("CR_AttackRoutine");
 	}
-
 }

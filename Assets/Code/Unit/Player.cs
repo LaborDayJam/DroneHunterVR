@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : Unit {
 
+	void Awake()
+	{
+		Drone.player = this;
+	}
 	// Use this for initialization
 	void Start () {
 	

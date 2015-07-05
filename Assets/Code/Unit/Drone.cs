@@ -8,6 +8,7 @@ public class Drone : Unit {
 	public float rof = 1;
 
 	protected Waypoint nextWayPoint;
+	protected float distanceThreshold = .1f;
 
 	protected virtual IEnumerator FollowWaypoints() {
 		Vector3 nextWaypointPosition = nextWayPoint.transform.position;
@@ -16,7 +17,7 @@ public class Drone : Unit {
 		while (nextWayPoint != null) {
 			//Move until I am near the next waypoint
 			//TODO optimize and not use Vector3.Distance
-			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > .1f) {
+			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > distanceThreshold) {
 				dir = (nextWaypointPosition - transform.position).normalized;
 				transform.position += dir * speed * Time.deltaTime;
 				yield return 0;

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class WaveManager : MonoBehaviour {
 
-	public Waypoint[] spawnPoints;
+	public Waypoint[] skirmisherSpawnPoints;
+	public Waypoint[] bomberSpawnPoints;
 
 	public int MAX_DRONES = 15;
 	public int droneCount = 0;
@@ -26,7 +27,10 @@ public class WaveManager : MonoBehaviour {
 				spawnTimer -= Time.deltaTime;
 				if(spawnTimer <= 0)
 				{
-					SpawnDrones();
+					if(Random.Range(0, 100) > 50)
+						SpawnDrones();
+					else
+						SpawnBomber();
 					spawnTimer = spawnInterval;
 				}
 				yield return 0;
@@ -39,11 +43,19 @@ public class WaveManager : MonoBehaviour {
 	{
 		for(int i = 0; i < spawnsPerInterval; i++)
 		{
-			Waypoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+			Waypoint spawnPoint = skirmisherSpawnPoints[Random.Range(0, skirmisherSpawnPoints.Length)];
 			Drone skirm = UnitFactory.instance.ConstructSkirmisher ();
 			skirm.SetSpawnPoint (spawnPoint);
 			droneCount++;
 		}
+	}
+
+	void SpawnBomber()
+	{
+		Waypoint spawnPoint = bomberSpawnPoints[Random.Range(0, bomberSpawnPoints.Length)];
+		Drone bomber = UnitFactory.instance.ConstructBomber();
+		bomber.SetSpawnPoint (spawnPoint);
+		droneCount++;
 	}
 
 	void onDroneDestroyed()
