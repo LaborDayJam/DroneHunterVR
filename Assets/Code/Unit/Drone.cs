@@ -3,23 +3,31 @@ using System.Collections;
 
 public class Drone : Unit {
 
-	float damage;
-	float rof;
+	public static Player player;
+	public float damage = 10;
+	public float rof = 1;
 
-	Waypoint nextWayPoint;
+	protected Waypoint nextWayPoint;
+	protected float distanceThreshold = .1f;
 
-	IEnumerator FollowWaypoints() {
+	protected virtual IEnumerator FollowWaypoints() {
 		Vector3 nextWaypointPosition = nextWayPoint.transform.position;
 		Vector3 dir;
+		Waypoint oldWaypoint;
 		while (nextWayPoint != null) {
 			//Move until I am near the next waypoint
-			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > .1f) {
+			//TODO optimize and not use Vector3.Distance
+			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > distanceThreshold) {
 				dir = (nextWaypointPosition - transform.position).normalized;
 				transform.position += dir * speed * Time.deltaTime;
 				yield return 0;
 			}
+			oldWaypoint = nextWayPoint;
+
 			//Update to the next Waypoint
-			nextWayPoint = nextWayPoint.nextWaypoint;
+			while(nextWayPoint == oldWaypoint)
+				nextWayPoint = nextWayPoint.nextWaypoint;
+
 			if(nextWayPoint)
 				nextWaypointPosition = nextWayPoint.transform.position;
 			else
@@ -32,6 +40,12 @@ public class Drone : Unit {
 	{
 		transform.position = spawnPoint.transform.position;
 		nextWayPoint = spawnPoint.nextWaypoint;
-		StartCoroutine (FollowWaypoints());
+		StartCoroutine ("FollowWaypoints");
+	}
+
+	protected override void onDeath()
+	{
+		base.onDeath();
+		StopCoroutine ("FollowWaypoints");	
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Waypoint : MonoBehaviour {
 
+	public bool isEdge = false;
 	public Waypoint[] nextWayPoints;
 	public Waypoint nextWaypoint { 
 		get { 
