@@ -30,6 +30,7 @@ public class UnitFactory : MonoBehaviour {
 	{
 		GameObject skirmisher = (GameObject)GameObject.Instantiate(prefabSkirmisher);
 		skirmisher.name = "Skirmisher";
+		skirmisher.transform.parent = transform;
 		return skirmisher.GetComponent<Drone>();
 	}
 	public Drone ConstructAvenger()

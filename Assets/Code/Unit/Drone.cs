@@ -11,6 +11,7 @@ public class Drone : Unit {
 	IEnumerator FollowWaypoints() {
 		Vector3 nextWaypointPosition = nextWayPoint.transform.position;
 		Vector3 dir;
+		Waypoint oldWaypoint;
 		while (nextWayPoint != null) {
 			//Move until I am near the next waypoint
 			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > .1f) {
@@ -18,8 +19,12 @@ public class Drone : Unit {
 				transform.position += dir * speed * Time.deltaTime;
 				yield return 0;
 			}
+			oldWaypoint = nextWayPoint;
+
 			//Update to the next Waypoint
-			nextWayPoint = nextWayPoint.nextWaypoint;
+			while(nextWayPoint == oldWaypoint)
+				nextWayPoint = nextWayPoint.nextWaypoint;
+
 			if(nextWayPoint)
 				nextWaypointPosition = nextWayPoint.transform.position;
 			else
