@@ -10,7 +10,7 @@ public class FiringController : MonoBehaviour
 	private InputController input;
 	private RaycastHit hit;
 	private float distance;
-	private float firingTimer = 1.5f; 
+	private float firingTimer = .2f; 
 	private float fireTime = 0;
 	private bool  isSight;
 
@@ -29,8 +29,9 @@ public class FiringController : MonoBehaviour
 		{
 			if(fireTime > firingTimer)
 			{
-				GameObject clone = Instantiate(bullet, firingStart.transform.position, transform.rotation)as GameObject;
+				GameObject clone = Instantiate(bullet, firingStart.transform.position, firingStart.transform.rotation)as GameObject;
 				fireTime = 0;
+				clone.GetComponent<Rigidbody>().velocity = firingStart.transform.TransformDirection(new Vector3(0, 0,40));
 			}
 		}
 
