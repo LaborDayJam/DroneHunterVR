@@ -1,16 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletMovement : MonoBehaviour 
+public class BulletCollision : MonoBehaviour 
 {
-	private Transform sightLine;
+
 
 	void Start()
 	{
-		sightLine = GameObject.Find("SightLinePosition").GetComponent<Transform>();
+	
 	}
 	void Update()
 	{
-		//transform.Translate(transform.forward * 2f * Time.deltaTime); 
+
+	}
+
+
+	void OnCollisionEnter(Collision Other)
+	{
+		switch(Other.transform.tag)
+		{
+			case "drones":
+			{
+				Other.gameObject.GetComponent<Unit>().health -= 2;
+				Destroy(this.gameObject);
+			}break;
+		}
 	}
 }
