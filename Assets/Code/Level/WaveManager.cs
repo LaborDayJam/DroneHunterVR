@@ -31,6 +31,7 @@ public class WaveManager : MonoBehaviour {
 				}
 				yield return 0;
 			}
+			yield return 0;
 		}
 	}
 
@@ -41,6 +42,12 @@ public class WaveManager : MonoBehaviour {
 			Waypoint spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 			Drone skirm = UnitFactory.instance.ConstructSkirmisher ();
 			skirm.SetSpawnPoint (spawnPoint);
+			droneCount++;
 		}
+	}
+
+	void onDroneDestroyed()
+	{
+		droneCount--;
 	}
 }

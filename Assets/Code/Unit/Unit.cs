@@ -28,7 +28,7 @@ public class Unit : MonoBehaviour {
 		other.health -= damage;
 	}
 
-	void onDeath()
+	protected virtual void onDeath()
 	{
 		
 	}

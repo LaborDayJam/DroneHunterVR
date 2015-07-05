@@ -96,7 +96,7 @@ GameObject:
   - 33: {fileID: 3350812}
   - 23: {fileID: 2320806}
   - 95: {fileID: 9505624}
-  - 114: {fileID: 11451730}
+  - 114: {fileID: 11436190}
   m_Layer: 0
   m_Name: Skirmisher
   m_TagString: Untagged
@@ -872,7 +872,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11451730
+--- !u!114 &11436190
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -880,11 +880,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 133104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f202079e9bac48e986f1549b6e50190, type: 3}
+  m_Script: {fileID: 11500000, guid: d7fba815eb15945f8b3b79e7918b480f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 100
   speed: 3
+  damage: 2
+  rof: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -895,6 +897,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rof
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
