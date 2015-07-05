@@ -11,7 +11,7 @@ public class Skirmisher : Drone {
 	IEnumerator CR_AttackRoutine()
 	{
 		//Only attack when on edge
-		while (!nextWayPoint.isEdge) {
+		while (nextWayPoint != null && !nextWayPoint.isEdge) {
 			yield return 0;
 		}
 
