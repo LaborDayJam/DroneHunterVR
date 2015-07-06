@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Skirmisher : Drone 
 {
-	public GameObject droneExplosion;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine ("CR_AttackRoutine");
@@ -27,8 +27,7 @@ public class Skirmisher : Drone
 	protected override void onDeath()
 	{
 		base.onDeath();
-		GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
-		GetComponent<DestroyBullet>().enabled = true;
+		GetComponent<DestroyThis>().enabled = true;
 		GetComponent<Rigidbody>().isKinematic = false;
 		StopCoroutine ("CR_AttackRoutine");
 	}

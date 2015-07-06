@@ -33,6 +33,8 @@ public class Bomber : Drone {
 	protected override void onDeath ()
 	{
 		base.onDeath ();
+		GetComponent<DestroyThis>().enabled = true;
+		GetComponent<Rigidbody>().isKinematic = false;
 		StopCoroutine ("CR_AttackRoutine");
 	}
 }

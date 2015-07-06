@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 487394}
   - 33: {fileID: 3344258}
   - 23: {fileID: 2310738}
+  - 114: {fileID: 11402710}
   m_Layer: 0
   m_Name: Mesh_1007
   m_TagString: Untagged
@@ -61,6 +62,7 @@ GameObject:
   - 4: {fileID: 409208}
   - 33: {fileID: 3306838}
   - 23: {fileID: 2324544}
+  - 114: {fileID: 11437332}
   m_Layer: 0
   m_Name: Mesh_1009
   m_TagString: Untagged
@@ -184,6 +186,7 @@ GameObject:
   - 4: {fileID: 450858}
   - 33: {fileID: 3375232}
   - 23: {fileID: 2337806}
+  - 114: {fileID: 11479130}
   m_Layer: 0
   m_Name: Mesh_1006
   m_TagString: Untagged
@@ -235,6 +238,7 @@ GameObject:
   - 4: {fileID: 449472}
   - 33: {fileID: 3370770}
   - 23: {fileID: 2329164}
+  - 114: {fileID: 11422774}
   m_Layer: 0
   m_Name: Mesh_1008
   m_TagString: Untagged
@@ -884,6 +888,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .430000007, y: .409999996, z: -.0700000003}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11402710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55aa2be154aa0144b2e1002f5e29662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11422774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55aa2be154aa0144b2e1002f5e29662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11436190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -899,7 +925,28 @@ MonoBehaviour:
   speed: 3
   damage: 2
   rof: 1
-  droneExplosion: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
+--- !u!114 &11437332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55aa2be154aa0144b2e1002f5e29662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11479130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55aa2be154aa0144b2e1002f5e29662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11494258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -908,7 +955,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 133104}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a863594db646a8458ad70fd4ea05d68, type: 3}
+  m_Script: {fileID: 11500000, guid: 971bc494fb9eea443a8ba00a6c704389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   time: 5
