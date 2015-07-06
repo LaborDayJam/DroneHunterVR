@@ -3,7 +3,8 @@ using System.Collections;
 
 public class BulletCollision : MonoBehaviour 
 {
-
+	public GameObject droneExplosion;
+	public GameObject otherExplosion;
 
 	void Start()
 	{
@@ -21,15 +22,21 @@ public class BulletCollision : MonoBehaviour
 		{
 			case "drones":
 			{
-				Other.gameObject.GetComponent<Unit>().health -= 2;
-				
+				Other.gameObject.GetComponent<Unit>().health -= 1;
+				GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
+				clone.transform.SetParent(Other.transform);
 			}break;
 			case "Missile":
 			{
+				GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
 				Destroy(Other.gameObject);
+			}break;
+			case "others":
+			{
+				GameObject clone = Instantiate(otherExplosion, transform.position, transform.rotation) as GameObject;
 			}break;
 		}
 
-
+		Destroy(this.gameObject);
 	}
 }

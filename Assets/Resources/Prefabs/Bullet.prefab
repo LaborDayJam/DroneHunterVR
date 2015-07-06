@@ -78,7 +78,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &11411712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,9 +87,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 190872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a863594db646a8458ad70fd4ea05d68, type: 3}
+  m_Script: {fileID: 11500000, guid: 971bc494fb9eea443a8ba00a6c704389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 3
 --- !u!114 &11489118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6073dc6512b4516489b478fa61907207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  droneExplosion: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
+  otherExplosion: {fileID: 166250, guid: fbd6b9b6139492341a10a495c514fcd9, type: 2}
 --- !u!135 &13555714
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -119,7 +122,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: droneExplosion
+      value: 
+      objectReference: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: otherExplosion
+      value: 
+      objectReference: {fileID: 166250, guid: fbd6b9b6139492341a10a495c514fcd9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190872}
