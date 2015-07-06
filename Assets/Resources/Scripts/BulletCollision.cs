@@ -22,8 +22,14 @@ public class BulletCollision : MonoBehaviour
 			case "drones":
 			{
 				Other.gameObject.GetComponent<Unit>().health -= 2;
-				Destroy(this.gameObject);
+				
+			}break;
+			case "Missile":
+			{
+				Destroy(Other.gameObject);
 			}break;
 		}
+
+
 	}
 }
