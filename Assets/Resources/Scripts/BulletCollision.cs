@@ -18,25 +18,29 @@ public class BulletCollision : MonoBehaviour
 
 	void OnCollisionEnter(Collision Other)
 	{
-		switch(Other.transform.tag)
+		if(Other.transform.tag != null)
 		{
-			case "drones":
+			switch(Other.transform.tag)
 			{
-				Other.gameObject.GetComponent<Unit>().health -= 1;
-				GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
-				clone.transform.SetParent(Other.transform);
-			}break;
-			case "Missile":
-			{
-				GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
-				Destroy(Other.gameObject);
-			}break;
-			case "others":
-			{
-				GameObject clone = Instantiate(otherExplosion, transform.position, transform.rotation) as GameObject;
-			}break;
+				case "drones":
+				{
+					Other.gameObject.GetComponent<Unit>().health -= 1;
+					GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
+					clone.transform.SetParent(Other.transform);
+					Destroy(this.gameObject);
+				}break;
+				case "Missile":
+				{
+					GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
+					Destroy(Other.gameObject);
+					Destroy(this.gameObject);
+				}break;
+				case "others":
+				{
+					GameObject clone = Instantiate(otherExplosion, transform.position, transform.rotation) as GameObject;
+					Destroy(this.gameObject);
+				}break;
+			}
 		}
-
-		Destroy(this.gameObject);
 	}
 }
