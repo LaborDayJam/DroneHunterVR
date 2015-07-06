@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Missile : Unit {
-		
+	public GameObject missileExplosion;
 	Transform target;
 	public float damage = 100;
 	public float distanceThreshold = 1;
@@ -18,7 +18,7 @@ public class Missile : Unit {
 		Unit targetUnit = target.GetComponent<Unit> ();
 		if (targetUnit != null) {
 			Damage (targetUnit, damage);
-			//TODO destroy missile, add particle effect
+			GameObject clone = Instantiate(missileExplosion, transform.position, transform.rotation)as GameObject;
 			Destroy(gameObject);
 		}
 	}
@@ -26,6 +26,8 @@ public class Missile : Unit {
 	public void SetTarget(Transform tf)
 	{
 		target = tf;
+		transform.LookAt(target.localPosition);
 		StartCoroutine ("CR_HomingMovementRoutine");
 	}
+
 }
