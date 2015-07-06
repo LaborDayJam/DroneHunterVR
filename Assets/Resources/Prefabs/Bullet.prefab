@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a863594db646a8458ad70fd4ea05d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 3
 --- !u!114 &11489118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,7 +120,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190872}

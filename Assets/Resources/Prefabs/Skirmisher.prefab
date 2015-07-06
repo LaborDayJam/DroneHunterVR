@@ -95,9 +95,10 @@ GameObject:
   - 4: {fileID: 429884}
   - 33: {fileID: 3350812}
   - 23: {fileID: 2320806}
-  - 95: {fileID: 9505624}
   - 114: {fileID: 11436190}
   - 65: {fileID: 6518020}
+  - 54: {fileID: 5448044}
+  - 114: {fileID: 11494258}
   m_Layer: 0
   m_Name: Skirmisher
   m_TagString: drones
@@ -272,7 +273,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133104}
   m_LocalRotation: {x: -.5, y: .5, z: .5, w: .5}
-  m_LocalPosition: {x: 0, y: 2.57999992, z: -21.2399998}
+  m_LocalPosition: {x: 2.08519936, y: 4.17000008, z: 1.17032433}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 450886}
@@ -856,6 +857,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178242}
   m_Mesh: {fileID: 4300004, guid: c9f90fd3110ce3f4caf8ed56845b52cf, type: 3}
+--- !u!54 &5448044
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133104}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6518020
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -868,23 +884,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .430000007, y: .409999996, z: -.0700000003}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9505624
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133104}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c9f90fd3110ce3f4caf8ed56845b52cf, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11436190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -900,6 +899,19 @@ MonoBehaviour:
   speed: 3
   damage: 2
   rof: 1
+  droneExplosion: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
+--- !u!114 &11494258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133104}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a863594db646a8458ad70fd4ea05d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -922,6 +934,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: drones
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: droneExplosion
+      value: 
+      objectReference: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: time
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
