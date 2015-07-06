@@ -400,7 +400,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155744}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .0200000089, y: .0200000089, z: .17065832}
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 100
   speed: 25
+  missileExplosion: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
   damage: 100
   distanceThreshold: 1
 --- !u!198 &19814878
