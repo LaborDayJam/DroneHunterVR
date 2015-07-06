@@ -31,11 +31,13 @@ public class FiringController : MonoBehaviour
 			{
 				GameObject clone = Instantiate(bullet, firingStart.transform.position, firingStart.transform.rotation)as GameObject;
 				fireTime = 0;
-				clone.GetComponent<Rigidbody>().velocity = firingStart.transform.TransformDirection(new Vector3(0, 0,40));
+				clone.GetComponent<Rigidbody>().velocity = firingStart.transform.TransformDirection(new Vector3(0, 0,80));
 			}
 		}
 
 		if(fireTime < firingTimer)
 			fireTime += Time.deltaTime;
+
+		 
 	}
 }

@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 499588}
   - 33: {fileID: 3300284}
-  - 136: {fileID: 13646682}
+  - 135: {fileID: 13555714}
   - 23: {fileID: 2323750}
-  - 114: {fileID: 11489118}
   - 114: {fileID: 11411712}
+  - 114: {fileID: 11489118}
   - 54: {fileID: 5494870}
   m_Layer: 0
   m_Name: Bullet
@@ -27,9 +27,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190872}
-  m_LocalRotation: {x: .500000119, y: .5, z: .5, w: .49999994}
-  m_LocalPosition: {x: .00480000023, y: 1.52699995, z: 1.28600001}
-  m_LocalScale: {x: .0482634753, y: -.0113557968, z: .0482634567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .000699999975, y: 1.52499998, z: 1.25580001}
+  m_LocalScale: {x: .046486564, y: .0464865714, z: .0464865714}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190872}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5494870
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6073dc6512b4516489b478fa61907207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &13646682
-CapsuleCollider:
+--- !u!135 &13555714
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -110,9 +110,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
