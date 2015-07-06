@@ -26,6 +26,7 @@ public class Missile : Unit {
 	public void SetTarget(Transform tf)
 	{
 		target = tf;
+		transform.LookAt(target.localPosition);
 		StartCoroutine ("CR_HomingMovementRoutine");
 	}
 }
