@@ -29,7 +29,7 @@ public class BulletCollision : MonoBehaviour
 					clone.transform.SetParent(Other.transform);
 					Destroy(this.gameObject);
 				}break;
-				case "Missile":
+				case "missile":
 				{
 					GameObject clone = Instantiate(droneExplosion, transform.position, transform.rotation) as GameObject;
 					Destroy(Other.gameObject);

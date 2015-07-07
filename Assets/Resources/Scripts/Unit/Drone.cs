@@ -7,19 +7,39 @@ public class Drone : Unit {
 	public float damage = 10;
 	public float rof = 1;
 
+	private bool bomber;
 	protected Waypoint nextWayPoint;
 	protected float distanceThreshold = .1f;
 
 	protected virtual IEnumerator FollowWaypoints() {
 		Vector3 nextWaypointPosition = nextWayPoint.transform.position;
-		Vector3 dir;
+		Vector3 dir; 
+		Vector3 target = GameObject.FindGameObjectWithTag("target").transform.position;
 		Waypoint oldWaypoint;
 		while (nextWayPoint != null) {
 			//Move until I am near the next waypoint
 			//TODO optimize and not use Vector3.Distance
-			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > distanceThreshold) {
+			while (Mathf.Abs( Vector3.Distance(transform.position, nextWaypointPosition)) > distanceThreshold) 
+			{
 				dir = (nextWaypointPosition - transform.position).normalized;
 				transform.position += dir * speed * Time.deltaTime;
+
+				if(this.gameObject.transform.name == "Bomber")
+				{
+					if(!bomber)
+					{
+						dir = (target - transform.position).normalized;
+						dir.y = 0;
+						transform.forward = dir;
+						bomber = true;
+					}
+				}
+				else
+				{
+					dir = (target - transform.position).normalized;
+					dir.y = 0;
+					transform.forward = dir;
+				}
 				yield return 0;
 			}
 			oldWaypoint = nextWayPoint;

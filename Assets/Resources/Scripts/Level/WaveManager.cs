@@ -54,7 +54,6 @@ public class WaveManager : MonoBehaviour {
 	{
 		Waypoint spawnPoint = bomberSpawnPoints[Random.Range(0, bomberSpawnPoints.Length)];
 		Drone bomber = UnitFactory.instance.ConstructBomber();
-		bomber.GetComponent<Transform>().rotation = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().rotation;
 		bomber.SetSpawnPoint (spawnPoint);
 		droneCount++;
 	}
