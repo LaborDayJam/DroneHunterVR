@@ -28,10 +28,11 @@ public class UnitFactory : MonoBehaviour {
 	
 	public Drone ConstructSkirmisher()
 	{
-		GameObject skirmisher = (GameObject)GameObject.Instantiate(prefabSkirmisher);
-		skirmisher.name = "Skirmisher";
-		skirmisher.transform.parent = transform;
-		return skirmisher.GetComponent<Drone>();
+		GameObject enemy = (GameObject)GameObject.Instantiate(prefabSkirmisher);
+		enemy.name = "Skirmisher";
+		enemy.transform.LookAt(GameObject.FindGameObjectWithTag("target").GetComponent<Transform>().position);
+		enemy.transform.parent = transform;
+		return enemy.GetComponent<Drone>();
 	}
 	public Drone ConstructAvenger()
 	{
@@ -46,6 +47,7 @@ public class UnitFactory : MonoBehaviour {
 	{
 		GameObject enemy = (GameObject)GameObject.Instantiate(prefabBomber);
 		enemy.name = "Bomber";
+		enemy.transform.LookAt(GameObject.FindGameObjectWithTag("target").GetComponent<Transform>().position);
 		enemy.transform.parent = transform;
 		return enemy.GetComponent<Drone>();
 	}
