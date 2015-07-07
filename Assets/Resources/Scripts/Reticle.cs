@@ -4,8 +4,7 @@ using System.Collections;
 public class Reticle : MonoBehaviour 
 {
 	private RaycastHit 	hit;
-	private Transform 	camera;
-	private Camera 		theCam;
+	public Transform los;
 
 	private float 		distance;
 
@@ -13,68 +12,21 @@ public class Reticle : MonoBehaviour
 	void Start () 
 	{
 
-		camera = GameObject.Find("RightEyeAnchor").GetComponent<Transform>();	
-		theCam = camera.GetComponent<Camera>();
+	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Physics.Raycast(new Ray(	camera.transform.position, 
-		                           	camera.transform.rotation * Vector3.forward * 2.0f), 
+		if(Physics.Raycast(new Ray(	los.position, 
+		                           los.rotation * Vector3.forward * 15.0f), 
 		                   			out hit))
 		{
-			distance = hit.distance * .95f;
-
-			if(distance > 10)
-			     distance = 10;
+		
+			if(hit.transform.tag == "drones")
+				GetComponent<SpriteRenderer>().color = Color.red;
+			else
+				GetComponent<SpriteRenderer>().color = Color.white;
 		}
-		else
-		{
-			distance = 10;
-		}
-		Vector3 aposition = new Vector3(camera.transform.position.x, camera.transform.position.y - 1.5f, camera.transform.position.z);
-		transform.position = aposition + camera.transform.rotation * Vector3.forward * (distance );
-		transform.LookAt(camera.transform.position);
-		transform.Rotate(0,180.0f,0);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
