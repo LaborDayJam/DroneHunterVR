@@ -80,9 +80,10 @@ GameObject:
   - 23: {fileID: 2369500}
   - 114: {fileID: 11477362}
   - 65: {fileID: 6532674}
+  - 54: {fileID: 5465756}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Missile
+  m_TagString: missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,6 +394,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167676}
   m_Mesh: {fileID: 4300006, guid: e0e2fb971346d9149911f00937a675bf, type: 3}
+--- !u!54 &5465756
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155744}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6532674
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -400,10 +416,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155744}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .0200000089, y: .0200000089, z: .17065832}
+  m_Size: {x: .0500000007, y: .0500000007, z: .200000003}
   m_Center: {x: 4.4408921e-16, y: -3.7252903e-09, z: 3.30872245e-24}
 --- !u!108 &10807538
 Light:
@@ -3570,7 +3586,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155744}
