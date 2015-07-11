@@ -8,6 +8,8 @@ TagManager:
   - missile
   - others
   - target
+  - power
+  - roads
   layers:
   - Default
   - TransparentFX

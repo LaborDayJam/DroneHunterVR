@@ -19,6 +19,7 @@ ModelImporter:
     100022: Mesh_1008
     100024: Mesh_1009
     100026: //RootNode
+    100028: Eye
     400000: Mesh_0815
     400002: Mesh_0816
     400004: Mesh_0817
@@ -33,6 +34,7 @@ ModelImporter:
     400022: Mesh_1008
     400024: Mesh_1009
     400026: //RootNode
+    400028: Eye
     2300000: Mesh_0815
     2300002: Mesh_0816
     2300004: Mesh_0817
@@ -47,6 +49,7 @@ ModelImporter:
     2300022: Mesh_1008
     2300024: Mesh_1009
     2300026: //RootNode
+    2300028: Eye
     3300000: Mesh_0815
     3300002: Mesh_0816
     3300004: Mesh_0817
@@ -61,6 +64,7 @@ ModelImporter:
     3300022: Mesh_1008
     3300024: Mesh_1009
     3300026: //RootNode
+    3300028: Eye
     4300000: Mesh_0814
     4300002: Mesh_0816
     4300004: Mesh_1006
@@ -75,6 +79,7 @@ ModelImporter:
     4300022: Mesh_0822
     4300024: Mesh_1009
     4300026: Mesh_0821
+    4300028: Eye
     7400000: Take 001
     9500000: //RootNode
   materials:

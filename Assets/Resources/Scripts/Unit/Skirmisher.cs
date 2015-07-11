@@ -3,10 +3,19 @@ using System.Collections;
 
 public class Skirmisher : Drone 
 {
+	public ParticleSystem firingLight;
+	public GameObject bullet;
+
+	private float fireTimer = 5;
+	private float fireTime = 0;
+	private float attackRange = 3;
+
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		StartCoroutine ("CR_AttackRoutine");
+		firingLight.Stop();
 	}
 
 	IEnumerator CR_AttackRoutine()
@@ -16,10 +25,11 @@ public class Skirmisher : Drone
 			yield return 0;
 		}
 
-		while (true) {
+		while (Mathf.Abs( Vector3.Distance(player.transform.position,transform.position)) >  attackRange) {
 			ReadyAttack();
-			yield return new WaitForSeconds(rof);
+			yield return new WaitForSeconds(firingLight.duration  * .75f);
 			Attack();
+			yield return new WaitForSeconds(fireTimer); 
 			yield return 0;
 		}
 	}
@@ -34,11 +44,14 @@ public class Skirmisher : Drone
 
 	void ReadyAttack()
 	{
-		//Show red dot indicating it is preparing to attack
+		firingLight.Play();
 	}
 
 	void Attack()
 	{
 		//attack the player
+		GameObject clone  = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
+		clone.GetComponent<Rigidbody>().velocity = transform.TransformDirection(0,0,80);
+		firingLight.Stop();
 	}
 }

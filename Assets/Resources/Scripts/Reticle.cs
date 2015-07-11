@@ -4,6 +4,7 @@ using System.Collections;
 public class Reticle : MonoBehaviour 
 {
 	private RaycastHit 	hit;
+
 	public Transform los;
 
 	private float 		distance;

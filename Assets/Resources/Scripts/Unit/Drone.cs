@@ -29,7 +29,7 @@ public class Drone : Unit {
 					if(!bomber)
 					{
 						dir = (target - transform.position).normalized;
-						dir.y = 0;
+						//dir.y = 0;
 						transform.forward = dir;
 						bomber = true;
 					}
@@ -37,7 +37,7 @@ public class Drone : Unit {
 				else
 				{
 					dir = (target - transform.position).normalized;
-					dir.y = 0;
+					//dir.y = 0;
 					transform.forward = dir;
 				}
 				yield return 0;

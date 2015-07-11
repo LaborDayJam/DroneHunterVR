@@ -1,50 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190872
+--- !u!1 &123940
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 499588}
-  - 33: {fileID: 3300284}
-  - 135: {fileID: 13555714}
-  - 23: {fileID: 2323750}
-  - 114: {fileID: 11411712}
-  - 114: {fileID: 11489118}
-  - 54: {fileID: 5494870}
-  - 96: {fileID: 9618866}
+  - 4: {fileID: 464006}
+  - 33: {fileID: 3310090}
+  - 135: {fileID: 13504756}
+  - 23: {fileID: 2391292}
+  - 96: {fileID: 9622584}
+  - 54: {fileID: 5410700}
+  - 114: {fileID: 11495716}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: SkirmisherBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &499588
+--- !u!4 &464006
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .000699999975, y: 1.52499998, z: 1.25580001}
-  m_LocalScale: {x: .046486564, y: .0464865714, z: .0464865714}
+  m_GameObject: {fileID: 123940}
+  m_LocalRotation: {x: 5.9604659e-08, y: -4.46963763e-40, z: -1.11022302e-16, w: 1}
+  m_LocalPosition: {x: -.00367087126, y: -.0340000018, z: .467616767}
+  m_LocalScale: {x: .0194012132, y: .0194012132, z: .0194012132}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2323750
+--- !u!23 &2391292
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e3784cf1bd83a934d9c47d10d22abea3, type: 2}
+  - {fileID: 2100000, guid: 458739da47c695343a3e84a53eee4ead, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -58,19 +57,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3300284
+--- !u!33 &3310090
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5494870
+--- !u!54 &5410700
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -80,17 +79,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!96 &9618866
+--- !u!96 &9622584
 TrailRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 984c2ede99270704188b2d660f2c487c, type: 2}
+  - {fileID: 2100000, guid: 458739da47c695343a3e84a53eee4ead, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -104,7 +103,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: .5
+  m_Time: .150000006
   m_StartWidth: .0500000007
   m_EndWidth: .0500000007
   m_Colors:
@@ -124,25 +123,13 @@ TrailRenderer:
       serializedVersion: 2
       rgba: 16777215
   m_MinVertexDistance: .100000001
-  m_Autodestruct: 1
---- !u!114 &11411712
+  m_Autodestruct: 0
+--- !u!114 &11495716
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 971bc494fb9eea443a8ba00a6c704389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 3
---- !u!114 &11489118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6073dc6512b4516489b478fa61907207, type: 3}
@@ -150,13 +137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droneExplosion: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
   otherExplosion: {fileID: 166250, guid: fbd6b9b6139492341a10a495c514fcd9, type: 2}
-  playerBullet: 1
---- !u!135 &13555714
+  playerBullet: 0
+--- !u!135 &13504756
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190872}
+  m_GameObject: {fileID: 123940}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -171,26 +158,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: time
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: droneExplosion
-      value: 
-      objectReference: {fileID: 166876, guid: 280466c70f6dba646a34b6278c14d3a9, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_ProbeAnchor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: otherExplosion
-      value: 
-      objectReference: {fileID: 166250, guid: fbd6b9b6139492341a10a495c514fcd9, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_CollisionDetection
-      value: 2
+      propertyPath: m_Time
+      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 190872}
+  m_RootGameObject: {fileID: 123940}
   m_IsPrefabParent: 1
